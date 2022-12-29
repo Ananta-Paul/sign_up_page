@@ -84,3 +84,13 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+@media screen and (max-width: 1000px) {
+  .vcenter{
+    top:45%;
+  }
+	.card{
+   
+   transform:scale(2);
+  }
+ 
+}
