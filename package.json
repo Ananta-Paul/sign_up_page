@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "request": "^2.88.2"
+  },
+  "name": "sign_up_page",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ananta Paul",
+  "license": "ISC",
+  "description": ""
+}
