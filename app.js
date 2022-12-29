@@ -1,3 +1,4 @@
+const dotenv=require("dotenv").config();
 const express=require("express");
 const bodyparser=require("body-parser");
 const request=require("request");
@@ -27,7 +28,7 @@ app.post("/",function(req,res){
     var tic=req.body.tic;
     var stat="pending";
     if (tic=="on")stat="subscribed";
-    if(testEmailAddress(email)&&fname!=""){
+    
     var data={
         members:[
             {email_address: email,
@@ -41,14 +42,14 @@ app.post("/",function(req,res){
     };
     var jdata=JSON.stringify(data);
     var option={
-        url:"https://us10.api.mailchimp.com/3.0/lists/a886cfb890",
+        url:"https://us10.api.mailchimp.com/3.0/lists/"+process.env.lid,
         method:"POST",
         headers:{
-            "Authorization":"krish 6aadb426d6c676218fcc9066a7a9c867-us10"
+            "Authorization":process.env.key
         },
         body:jdata
     };
-    }
+    
     request(option,function(error,response,body){
         if(error||(!testEmailAddress(email))||response.statusCode!=200||fname==""){
             res.sendFile(__dirname+"/failure.html");
@@ -66,5 +67,3 @@ res.redirect("/");
 app.listen(process.env.PORT||3000,function(){
     console.log("server is running at port 3000.");
 });
-//6aadb426d6c676218fcc9066a7a9c867-us10
-//a886cfb890
