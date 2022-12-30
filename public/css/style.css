@@ -85,21 +85,19 @@ color: white;
 margin-left: 4px;
 }
 @media screen and (max-width: 1000px) {
-  .vcenter{		.vcenter {
-    top:45%;			top: 48%;
-  }		}
-	.card{		.card {
-
-		transform: scale(1.2);
-   transform:scale(2);		}
-  }	}
-
-
-}	@media screen and (max-width: 400px) {
 	.vcenter {
 		top: 48%;
 	}
 	.card {
-		transform: scale(2);
+		transform: scale(1.2);
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.vcenter {
+		top: 48%;
+	}
+	.card {
+		transform: scale(0.9);
 	}
 }
